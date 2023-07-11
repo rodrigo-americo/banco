@@ -1,4 +1,4 @@
-def sacar(valor, saldo, numero_saques, limite, extrato):
+def sacar(*, valor, saldo, numero_saques, limite, extrato):
     LIMITE_SAQUE = 3
     if numero_saques < LIMITE_SAQUE:
         if verifica_valor(saldo, valor, limite):
@@ -65,7 +65,7 @@ def criar_conta_corrente():
     conta = {"Agencia": "001", "Numero": "", "Nome": ""}
     nome_cliente = input('Porfavor informe o nome do titular da conta')
     if validar_nome(nome_cliente):
-        conta["Numero"] = "00"+ str(len(conta)+1)
+        conta["Numero"] = "00" + str(len(conta)+1)
         conta["Nome"] = nome_cliente
         contas_correntes.append(conta)
     else:
